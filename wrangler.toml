@@ -1,0 +1,22 @@
+#:schema node_modules/wrangler/config-schema.json
+# Cloudflare Worker config for kakulisaree.com (main-site).
+# This file is read by Cloudflare Workers Builds on every push to main.
+
+name = "main-site"
+main = "build/worker.js"
+compatibility_date = "2026-10-01"
+
+# Build step runs on Cloudflare's build runner before deploy. Inlines the
+# landing-page HTML into the worker module.
+[build]
+command = "python3 scripts/build.py"
+
+# Observability on so logs show up in the Worker Logs tab.
+[observability]
+enabled = true
+
+# Logs are structured JSON; keep retention default (3 days free tier).
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+invocation_logs = true
