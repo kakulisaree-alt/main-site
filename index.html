@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Kakuli Saree — Opening Soon</title>
+  <meta name="description" content="Kakuli Saree — handpicked sarees from Kolkata. Opening soon." />
+  <meta name="theme-color" content="#8B1538" />
+  <meta property="og:title" content="Kakuli Saree — Opening Soon" />
+  <meta property="og:description" content="Handpicked sarees from Kolkata. Opening soon on kakulisaree.com." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kakulisaree.com" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🪔%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Noto+Serif+Bengali:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #8B1538;
+      --red-dark: #5B0C22;
+      --gold: #C9A96E;
+      --gold-soft: #E8D4A3;
+      --cream: #FBF7F0;
+      --cream-dark: #F2EADA;
+      --ink: #2A1D1D;
+      --ink-soft: #6B5B5B;
+      --line: rgba(201, 169, 110, 0.35);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.55;
+      min-height: 100dvh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Decorative background weave */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 10%, rgba(201,169,110,0.08), transparent 50%),
+        radial-gradient(circle at 85% 90%, rgba(139,21,56,0.06), transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 32px 24px 48px;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .mark {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 56px;
+      opacity: 0;
+      animation: rise .9s .1s forwards;
+    }
+    .mark-icon {
+      width: 32px; height: 32px;
+      flex: none;
+    }
+    .mark-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 24px 0 48px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      color: var(--gold);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: rise .9s .3s forwards;
+    }
+    .ornament .line {
+      width: 48px; height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+    .ornament .diamond {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: clamp(44px, 11vw, 68px);
+      line-height: 1.05;
+      color: var(--red);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      animation: rise .9s .4s forwards;
+    }
+    .brand em {
+      font-style: italic;
+      color: var(--red-dark);
+    }
+
+    .bengali {
+      font-family: 'Noto Serif Bengali', 'Noto Sans Bengali', serif;
+      font-weight: 500;
+      font-size: clamp(22px, 5.5vw, 30px);
+      color: var(--ink);
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: rise .9s .55s forwards;
+    }
+
+    .status {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 10px 24px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(251, 247, 240, 0.6);
+      backdrop-filter: blur(4px);
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: rise .9s .7s forwards;
+    }
+
+    .tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(16px, 4.2vw, 20px);
+      color: var(--ink-soft);
+      max-width: 420px;
+      margin: 0 auto 44px;
+      line-height: 1.5;
+      opacity: 0;
+      animation: rise .9s .85s forwards;
+    }
+
+    /* Notify form */
+    .notify {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: 0 1px 2px rgba(42,29,29,0.04), 0 12px 24px -16px rgba(139,21,56,0.15);
+      opacity: 0;
+      animation: rise .9s 1s forwards;
+    }
+    .notify h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--ink);
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    .notify p {
+      font-size: 13px;
+      color: var(--ink-soft);
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .field {
+      display: flex;
+      gap: 8px;
+      flex-direction: column;
+    }
+    .field input {
+      font: inherit;
+      font-size: 15px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--cream);
+      color: var(--ink);
+      width: 100%;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .field input::placeholder { color: #B8A89E; }
+    .field input:focus {
+      outline: none;
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(139,21,56,0.12);
+    }
+    .field button {
+      font: inherit;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 14px 20px;
+      background: var(--red);
+      color: #fff;
+      border: 1px solid var(--red);
+      border-radius: 12px;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: background .2s, transform .1s;
+    }
+    .field button:hover { background: var(--red-dark); }
+    .field button:active { transform: translateY(1px); }
+    .notify .status-msg {
+      margin-top: 14px;
+      font-size: 13px;
+      text-align: center;
+      min-height: 1.2em;
+      color: var(--gold);
+    }
+    .notify .status-msg.success { color: #0F7B4A; }
+    .notify .status-msg.error { color: #B33232; }
+
+    /* Social row */
+    .socials {
+      margin-top: 36px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      opacity: 0;
+      animation: rise .9s 1.15s forwards;
+    }
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.5);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background .2s, border-color .2s, color .2s;
+    }
+    .social-btn:hover {
+      background: #fff;
+      border-color: var(--gold);
+      color: var(--red);
+    }
+    .social-btn svg { width: 16px; height: 16px; }
+
+    /* Footer */
+    footer {
+      margin-top: 48px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--ink-soft);
+      opacity: 0;
+      animation: rise .9s 1.3s forwards;
+    }
+    footer .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      color: var(--line);
+    }
+    footer .divider .line {
+      width: 32px; height: 1px;
+      background: var(--line);
+    }
+    footer p { line-height: 1.6; }
+    footer a { color: var(--red); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="mark">
+      <svg class="mark-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" stroke="#8B1538" stroke-width="1.2"/>
+        <path d="M8 16 Q 16 6, 24 16 Q 16 26, 8 16 Z" fill="#C9A96E" opacity="0.9"/>
+        <circle cx="16" cy="16" r="2.4" fill="#8B1538"/>
+      </svg>
+      <span class="mark-text">Kakuli</span>
+    </div>
+
+    <section class="hero">
+      <div class="ornament" aria-hidden="true">
+        <span class="line"></span>
+        <span class="diamond"></span>
+        <span class="line"></span>
+      </div>
+
+      <h1 class="brand">Kakuli <em>Saree</em></h1>
+      <p class="bengali">কাকলি শাড়ি</p>
+
+      <span class="status">Opening Soon</span>
+
+      <p class="tagline">
+        Handpicked sarees from the heart of Kolkata —<br/>
+        where tradition meets everyday elegance.
+      </p>
+
+      <div class="notify" aria-labelledby="notify-title">
+        <h3 id="notify-title">Be the first to know</h3>
+        <p>We'll send one note the day we open.</p>
+        <form class="field" id="notify-form" novalidate>
+          <input
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+            aria-label="Your email"
+          />
+          <button type="submit">Notify Me</button>
+        </form>
+        <div class="status-msg" id="status-msg" role="status" aria-live="polite"></div>
+      </div>
+
+      <div class="socials">
+        <a class="social-btn" href="https://www.facebook.com/kakulisaree" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5h1.7V4.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.4V14h2.7v8h3.4z"/></svg>
+          Facebook
+        </a>
+        <a class="social-btn" href="https://wa.me/" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A10.4 10.4 0 0 0 4.1 16.2L3 21l4.9-1.3A10.4 10.4 0 0 0 22.9 10a10.3 10.3 0 0 0-2.4-6.5zM12.5 20.3a8.7 8.7 0 0 1-4.5-1.2l-.3-.2-2.9.8.8-2.8-.2-.3a8.7 8.7 0 1 1 7.1 3.7zM17 14.3l-1.4-.4a.6.6 0 0 0-.6.1l-.7.8c-.1.1-.3.2-.5.1a7.1 7.1 0 0 1-3.6-3.1.4.4 0 0 1 .1-.5l.5-.5a.6.6 0 0 0 .1-.6l-.6-1.4a.5.5 0 0 0-.5-.3h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1 2.5 11 11 0 0 0 4.5 4c.5.2 1 .4 1.5.4a2.6 2.6 0 0 0 1.7-.6 2.1 2.1 0 0 0 .5-1.4.6.6 0 0 0-.4-.4z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="divider" aria-hidden="true">
+        <span class="line"></span>
+        <span>✦</span>
+        <span class="line"></span>
+      </div>
+      <p>Crafted in Kolkata, India</p>
+      <p>&copy; <span id="year"></span> Kakuli Saree. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('notify-form');
+    const statusMsg = document.getElementById('status-msg');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = form.email.value.trim();
+      statusMsg.className = 'status-msg';
+      statusMsg.textContent = '';
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        statusMsg.classList.add('error');
+        statusMsg.textContent = 'Please enter a valid email.';
+        return;
+      }
+      statusMsg.textContent = 'Sending…';
+      try {
+        const res = await fetch('/api/notify', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+        if (res.ok) {
+          statusMsg.classList.add('success');
+          statusMsg.textContent = 'Thank you — we will be in touch.';
+          form.reset();
+        } else {
+          const data = await res.json().catch(() => ({}));
+          statusMsg.classList.add('error');
+          statusMsg.textContent = data.error || 'Something went wrong. Please try again.';
+        }
+      } catch {
+        statusMsg.classList.add('error');
+        statusMsg.textContent = 'Network error. Please try again.';
+      }
+    });
+  </script>
+</body>
+</html>
