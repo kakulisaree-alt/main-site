@@ -4,5 +4,6 @@ build/
 .DS_Store
 .env
 .env.local
+.env.*.local
 .wrangler/
 *.log
