@@ -57,7 +57,7 @@ async function insertSignup({ email, userAgent, ipHash }) {
       apikey: SUPABASE_ANON_KEY,
       authorization: `Bearer ${SUPABASE_ANON_KEY}`,
       "content-type": "application/json",
-      prefer: "return=minimal,resolution=ignore-duplicates",
+      prefer: "return=minimal",
     },
     body: JSON.stringify({
       email,
